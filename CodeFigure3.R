@@ -1,4 +1,4 @@
-# jonashaslbeck@protonmail.com; September 28th, 2023
+# jonashaslbeck@protonmail.com; Feb 2nd, 2024
 
 # -------------------------------------------------
 # -------- What is happening here? ----------------
@@ -154,13 +154,13 @@ for(i in 1:500) {
 
 
 sc <- 0.7
-pdf("Figures/Fig_Data_and_Phenomena_Sept28_23.pdf", width = 15*sc, height = 13*sc)
+pdf("Figures/Fig_Data_and_Phenomena_Feb2_24.pdf", width = 15*sc, height = 13*sc)
 
 
 par(mfrow=c(2,2))
 
 cols <- c("grey", "black", "lightblue", "tomato", "orange")
-cex_mtext <- 1.2
+cex_mtext <- 1.15
 
 # ----- Panel A: Data -----
 
@@ -209,7 +209,7 @@ qgraph(out1$phi,
        edge.label.cex = 1.5,
        theme = "colorblind",
        mar = rep(15,4))
-mtext("            B. Within-person: VAR model of Person 1", side=3, adj=-.1, line=.8, cex=cex_mtext)
+mtext("            B. Intraindividual: VAR model of Person 1", side=3, adj=-.1, line=.8, cex=cex_mtext)
 
 text(-.2, 1.2, "Arousal", cex=1.4, col="black")
 text(-.2, -1.2, "Perceived Threat", cex=1.4, col="black")
@@ -229,7 +229,7 @@ qgraph(ggm_out,
        edge.label.cex = 1.5,
        edge.labels = TRUE,
        mar = rep(5,4))
-mtext(".           C. Between-person: Symptom network", side=3, adj=-.1, line=-.2, cex=cex_mtext)
+mtext(".           C. Interindividual: Symptom network", side=3, adj=-.1, line=-.2, cex=cex_mtext)
 
 legend(-1.3,0, legend=c("P = Panic",
                            "D = Distress",
@@ -248,7 +248,7 @@ title(xlab = expression(atop(phantom(0), "Perceived Threat"[t] %->% Arousal[t]))
 title(ylab = "Symptom Sum Score")
 lm_obj <- lm(m_mix$sumscore~m_mix$Mar12)
 abline(lm_obj, lwd=2, lty=2)
-mtext("D. Mixed: VAR parameter & Symptom Sum Score", side=3, adj=-.1, line=.8, cex=cex_mtext)
+mtext("D. Combined: VAR parameter & Symptom Score", side=3, adj=-.1, line=.8, cex=cex_mtext)
 
 
 dev.off()
